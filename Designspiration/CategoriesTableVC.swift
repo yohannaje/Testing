@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CategoriesTableVC: UITableViewController{
+class CategoriesTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet var tableView: UITableView!
     
     var types = [Categories]()
     
@@ -19,12 +21,12 @@ class CategoriesTableVC: UITableViewController{
      
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.types.count
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("setting-cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("setting-cell", forIndexPath: indexPath) as! UITableViewCell
         var type: Categories
         type = types[indexPath.row]
         
