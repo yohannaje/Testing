@@ -12,14 +12,7 @@ class CategoriesTableVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet var tableView: UITableView!
     
-    var types = [Categories]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        self.types = [Categories(name: "Design"),Categories(name: "Travel"),Categories(name: "Life"),Categories(name: "Work"),Categories(name: "Fashion"),Categories(name: "Future"),Categories(name: "Dreams")]
-     
-    }
+    let types = [Categories(name: "Design"),Categories(name: "Travel"),Categories(name: "Life"),Categories(name: "Work"),Categories(name: "Fashion"),Categories(name: "Future"),Categories(name: "Dreams")]
 
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.types.count
